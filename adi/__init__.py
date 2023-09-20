@@ -99,6 +99,7 @@ from adi.max31865 import max31865
 from adi.one_bit_adc_dac import one_bit_adc_dac
 from adi.QuadMxFE_multi import QuadMxFE_multi
 from adi.tdd import tdd
+from adi.cn0556 import cn0556
 
 try:
     from adi.jesd import jesd
