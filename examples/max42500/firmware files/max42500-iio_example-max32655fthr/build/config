@@ -1,0 +1,1297 @@
+
+#
+# Hardware Interface Drivers
+#
+
+#
+# Communication Interfaces
+#
+# CONFIG_SPI is not set
+CONFIG_I2C=y
+# CONFIG_I3C is not set
+CONFIG_UART=y
+# CONFIG_TDM is not set
+CONFIG_GPIO=y
+CONFIG_IRQ=y
+# CONFIG_PWM is not set
+# CONFIG_TIMER is not set
+# CONFIG_CLK is not set
+# CONFIG_MDIO is not set
+CONFIG_DMA=y
+# CONFIG_EEPROM is not set
+# CONFIG_RTC is not set
+# CONFIG_TRNG is not set
+# end of Hardware Interface Drivers
+
+CONFIG_IIO=y
+# CONFIG_CAPI is not set
+
+#
+# Device Drivers
+#
+# CONFIG_ACCEL is not set
+# CONFIG_ADC is not set
+# CONFIG_ADC_DAC is not set
+# CONFIG_AFE is not set
+# CONFIG_AMPLIFIERS is not set
+# CONFIG_AXI_CORE is not set
+# CONFIG_CDC is not set
+# CONFIG_COLOR is not set
+# CONFIG_DAC is not set
+# CONFIG_DIGITAL_IO is not set
+# CONFIG_DISPLAY is not set
+# CONFIG_ECG is not set
+# CONFIG_EEPROM_DRIVERS is not set
+# CONFIG_FILTER is not set
+# CONFIG_FREQUENCY is not set
+# CONFIG_GMSL is not set
+# CONFIG_GNSS_GPS is not set
+# CONFIG_GYRO is not set
+# CONFIG_HEALTH is not set
+# CONFIG_IMPEDANCE_ANALYZER is not set
+# CONFIG_IMU is not set
+# CONFIG_IO_EXPANDER is not set
+# CONFIG_IO_LINK is not set
+# CONFIG_LED is not set
+# CONFIG_METER is not set
+# CONFIG_MOTOR is not set
+# CONFIG_MUX is not set
+# CONFIG_NET is not set
+# CONFIG_PHOTO_ELECTRONIC is not set
+# CONFIG_POSITION is not set
+# CONFIG_POTENTIOMETER is not set
+CONFIG_POWER=y
+# CONFIG_POWER_ADES1754 is not set
+# CONFIG_POWER_ADP1050 is not set
+# CONFIG_POWER_IIO_ADP1050 is not set
+# CONFIG_POWER_ADP1055 is not set
+# CONFIG_POWER_IIO_ADP1055 is not set
+# CONFIG_POWER_ADP5055 is not set
+# CONFIG_POWER_IIO_ADP5055 is not set
+# CONFIG_POWER_LT3074 is not set
+# CONFIG_POWER_IIO_LT3074 is not set
+# CONFIG_POWER_LT7170 is not set
+# CONFIG_POWER_IIO_LT7170 is not set
+# CONFIG_POWER_LT7182S is not set
+# CONFIG_POWER_IIO_LT7182S is not set
+# CONFIG_POWER_LT8491 is not set
+# CONFIG_POWER_IIO_LT8491 is not set
+# CONFIG_POWER_IIO_LT8722 is not set
+# CONFIG_POWER_LTC2992 is not set
+# CONFIG_POWER_LTC3337 is not set
+# CONFIG_POWER_LTC3350 is not set
+# CONFIG_POWER_LTC4162L is not set
+# CONFIG_POWER_IIO_LTC4162L is not set
+# CONFIG_POWER_LTC7841 is not set
+# CONFIG_POWER_IIO_LTC7841 is not set
+# CONFIG_POWER_IIO_LTC7871 is not set
+# CONFIG_POWER_LTM3360B is not set
+# CONFIG_POWER_LTM4686 is not set
+# CONFIG_POWER_IIO_LTM4686 is not set
+# CONFIG_POWER_LTM4700 is not set
+# CONFIG_POWER_IIO_LTM4700 is not set
+# CONFIG_POWER_LTP8800 is not set
+# CONFIG_POWER_IIO_LTP8800 is not set
+# CONFIG_POWER_MAX17616 is not set
+# CONFIG_POWER_IIO_MAX17616 is not set
+# CONFIG_POWER_MAX17851 is not set
+# CONFIG_POWER_MAX20362 is not set
+CONFIG_POWER_MAX42500=y
+CONFIG_POWER_IIO_MAX42500=y
+# CONFIG_RESOLVER is not set
+# CONFIG_RF_TRANSCEIVER is not set
+# CONFIG_RTC_DRIVERS is not set
+# CONFIG_SD_CARD is not set
+# CONFIG_SWITCH is not set
+# CONFIG_TEMPERATURE is not set
+# end of Device Drivers
+
+#
+# Platform Drivers
+#
+CONFIG_PLATFORM_DRIVERS=y
+# CONFIG_STM32 is not set
+CONFIG_MAXIM=y
+CONFIG_GPIO_MAXIM=y
+CONFIG_GPIO_IRQ_MAXIM=y
+CONFIG_I2C_MAXIM=y
+CONFIG_UART_MAXIM=y
+CONFIG_UART_STDIO_MAXIM=y
+# CONFIG_USB_UART_MAXIM is not set
+CONFIG_IRQ_MAXIM=y
+CONFIG_DMA_MAXIM=y
+# CONFIG_PICO is not set
+# CONFIG_ADUCM3029 is not set
+# CONFIG_XILINX is not set
+# CONFIG_LINUX_USERSPACE is not set
+# CONFIG_WIN is not set
+# CONFIG_MAC is not set
+# CONFIG_PLATFORM_I2C_BITBANG is not set
+# end of Platform Drivers
+
+#
+# External Libraries
+#
+# CONFIG_FTD2XX is not set
+# CONFIG_FREERTOS is not set
+# CONFIG_LWIP is not set
+# CONFIG_CORDIO is not set
+# CONFIG_MBEDTLS is not set
+# CONFIG_MQTT is not set
+# CONFIG_ESH is not set
+# CONFIG_LVGL is not set
+# CONFIG_AZURE is not set
+# end of External Libraries
+
+#
+# Project-Specific Configuration
+#
+
+#
+# APARD32690 Configuration
+#
+CONFIG_APARD32690_BASIC_EXAMPLE=y
+# end of APARD32690 Configuration
+
+#
+# cn0561 Configuration
+#
+CONFIG_CN0561_UART_EXAMPLE=y
+# CONFIG_CN0561_IIO_EXAMPLE is not set
+# CONFIG_CN0561_ZED_CARRIER is not set
+# CONFIG_CN0561_CORAZ7S_CARRIER is not set
+# end of cn0561 Configuration
+
+#
+# CN0565 Configuration
+#
+CONFIG_CN0565_EIT_EXAMPLE=y
+# CONFIG_CN0565_EIT_IIO_EXAMPLE is not set
+# end of CN0565 Configuration
+
+#
+# ADXRS290 PMDZ Configuration
+#
+CONFIG_ADXRS290_PMDZ_IIO_EXAMPLE=y
+# CONFIG_ADXRS290_PMDZ_IIO_TRIGGER_EXAMPLE is not set
+# end of ADXRS290 PMDZ Configuration
+
+#
+# EVAL-ADIS1647X Configuration
+#
+CONFIG_EVAL_ADIS1647X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADIS1647X_IIO_TRIGGER_EXAMPLE is not set
+# end of EVAL-ADIS1647X Configuration
+
+#
+# EVAL-ADIS1650X Configuration
+#
+CONFIG_EVAL_ADIS1650X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADIS1650X_IIO_TRIGGER_EXAMPLE is not set
+# end of EVAL-ADIS1650X Configuration
+
+#
+# EVAL-ADIS1654X Configuration
+#
+CONFIG_EVAL_ADIS1654X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADIS1654X_IIO_TRIGGER_EXAMPLE is not set
+# end of EVAL-ADIS1654X Configuration
+
+#
+# EVAL-ADIS1655X Configuration
+#
+CONFIG_EVAL_ADIS1655X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADIS1655X_IIO_TRIGGER_EXAMPLE is not set
+# end of EVAL-ADIS1655X Configuration
+
+#
+# EVAL-ADIS1657X Configuration
+#
+CONFIG_EVAL_ADIS1657X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADIS1657X_IIO_TRIGGER_EXAMPLE is not set
+# end of EVAL-ADIS1657X Configuration
+
+#
+# EVAL-ADXL313Z Configuration
+#
+CONFIG_EVAL_ADXL313Z_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADXL313Z_IIO_EXAMPLE is not set
+# end of EVAL-ADXL313Z Configuration
+
+#
+# ADXL38x Configuration
+#
+CONFIG_EVAL_ADXL38X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADXL38X_SELFTEST_EXAMPLE is not set
+# CONFIG_EVAL_ADXL38X_FIFO_EXAMPLE is not set
+# end of ADXL38x Configuration
+
+#
+# ADXL355 PMDZ Configuration
+#
+CONFIG_ADXL355_PMDZ_DUMMY_EXAMPLE=y
+# CONFIG_ADXL355_PMDZ_IIO_EXAMPLE is not set
+# CONFIG_ADXL355_PMDZ_IIO_TRIGGER_EXAMPLE is not set
+CONFIG_ADXL355_PMDZ_DEV_ADXL355=y
+# CONFIG_ADXL355_PMDZ_DEV_ADXL357 is not set
+# CONFIG_ADXL355_PMDZ_DEV_ADXL359 is not set
+# end of ADXL355 PMDZ Configuration
+
+#
+# eval-adxl367z Configuration
+#
+CONFIG_EVAL_ADXL367Z_DUMMY_EXAMPLE=y
+# CONFIG_EVAL_ADXL367Z_IIO_EXAMPLE is not set
+# end of eval-adxl367z Configuration
+
+#
+# EVAL-CN0391-ARDZ Configuration
+#
+CONFIG_EVAL_CN0391_ARDZ_BASIC_EXAMPLE=y
+# end of EVAL-CN0391-ARDZ Configuration
+
+#
+# EVAL-ADIS1646X Configuration
+#
+CONFIG_EVAL_ADIS1646X_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADIS1646X_IIO_TRIGGER_EXAMPLE is not set
+# end of EVAL-ADIS1646X Configuration
+
+#
+# IIO Demo Configuration
+#
+CONFIG_IIO_DEMO_IIO_EXAMPLE=y
+# CONFIG_IIO_DEMO_IIO_TIMER_TRIGGER_EXAMPLE is not set
+# CONFIG_IIO_DEMO_IIO_SW_TRIGGER_EXAMPLE is not set
+# CONFIG_IIO_DEMO_NETWORKING is not set
+# end of IIO Demo Configuration
+
+#
+# LTM3360B Configuration
+#
+CONFIG_LTM3360B_BASIC_EXAMPLE=y
+# end of LTM3360B Configuration
+
+#
+# MAX14906 Configuration
+#
+CONFIG_MAX14906_BASIC_EXAMPLE=y
+# CONFIG_MAX14906_IIO_EXAMPLE is not set
+# end of MAX14906 Configuration
+
+#
+# MAX22007 Configuration
+#
+CONFIG_MAX22007_BASIC_EXAMPLE=y
+# end of MAX22007 Configuration
+
+#
+# MAX22915 Configuration
+#
+CONFIG_MAX22915_BASIC_EXAMPLE=y
+# end of MAX22915 Configuration
+
+#
+# SWIOT1L Configuration
+#
+CONFIG_SWIOT1L_DEFAULT_FW=y
+# CONFIG_SWIOT1L_MQTT_EXAMPLE is not set
+# CONFIG_SWIOT1L_STATIC_IP is not set
+# CONFIG_SWIOT1L_OA_TC6_SPI is not set
+# end of SWIOT1L Configuration
+
+#
+# ad3552r_fmcz Configuration
+#
+CONFIG_AD3552R_FMCZ_AXI_QSPI_EXAMPLE=y
+# CONFIG_AD3552R_FMCZ_AXI_QSPI_IIO_EXAMPLE is not set
+# CONFIG_AD3552R_FMCZ_GENERIC_SPI_EXAMPLE is not set
+# CONFIG_AD3552R_FMCZ_GENERIC_SPI_IIO_EXAMPLE is not set
+# end of ad3552r_fmcz Configuration
+
+#
+# AD405X Configuration
+#
+CONFIG_AD405X_BASIC_EXAMPLE=y
+# CONFIG_AD405X_BASIC_I3C_EXAMPLE is not set
+# CONFIG_AD405X_I3C_DMA_EXAMPLE is not set
+# CONFIG_AD405X_IIO_EXAMPLE is not set
+# end of AD405X Configuration
+
+#
+# ad6676-ebz Configuration
+#
+CONFIG_AD6676_EBZ_DEMO_EXAMPLE=y
+# CONFIG_AD6676_EBZ_IIO_EXAMPLE is not set
+# end of ad6676-ebz Configuration
+
+#
+# ad9265-fmc-125ebz Configuration
+#
+CONFIG_AD9265_FMC_125EBZ_DEMO_EXAMPLE=y
+# CONFIG_AD9265_FMC_125EBZ_IIO_EXAMPLE is not set
+# end of ad9265-fmc-125ebz Configuration
+
+#
+# ad9361 Configuration
+#
+CONFIG_AD9361_DEMO_EXAMPLE=y
+# CONFIG_AD9361_IIO_EXAMPLE is not set
+# CONFIG_AD9361_DMA_EXAMPLE is not set
+# CONFIG_AD9361_DMA_IRQ_EXAMPLE is not set
+# CONFIG_AD9361_DEMO_FMCOMMS5_EXAMPLE is not set
+# CONFIG_AD9361_IIO_FMCOMMS5_EXAMPLE is not set
+# end of ad9361 Configuration
+
+#
+# ad9371 Configuration
+#
+CONFIG_AD9371_DEMO_EXAMPLE=y
+# CONFIG_AD9371_DMA_EXAMPLE is not set
+# CONFIG_AD9371_IIO_EXAMPLE is not set
+# end of ad9371 Configuration
+
+#
+# ad9434-fmc-500ebz Configuration
+#
+CONFIG_AD9434_FMC_500EBZ_DEMO_EXAMPLE=y
+# CONFIG_AD9434_FMC_500EBZ_IIO_EXAMPLE is not set
+# end of ad9434-fmc-500ebz Configuration
+
+#
+# display_demo Configuration
+#
+CONFIG_DISPLAY_DEMO_DEMO_EXAMPLE=y
+# end of display_demo Configuration
+
+#
+# ad7606x-fmc Configuration
+#
+CONFIG_AD7606X_FMC_BASIC_EXAMPLE=y
+# CONFIG_AD7606X_FMC_IIO_EXAMPLE is not set
+# end of ad7606x-fmc Configuration
+
+#
+# adaq7980_sdz Configuration
+#
+CONFIG_ADAQ7980_SDZ_DEMO_EXAMPLE=y
+# end of adaq7980_sdz Configuration
+
+#
+# adaq8092_fmc Configuration
+#
+CONFIG_ADAQ8092_FMC_DEMO_EXAMPLE=y
+# CONFIG_ADAQ8092_FMC_IIO_EXAMPLE is not set
+# end of adaq8092_fmc Configuration
+
+#
+# ad7616-sdz Configuration
+#
+CONFIG_AD7616_SDZ_DEMO_EXAMPLE=y
+# end of ad7616-sdz Configuration
+
+#
+# ad7124-4sdz Configuration
+#
+CONFIG_AD7124_4SDZ_DEMO_EXAMPLE=y
+# end of ad7124-4sdz Configuration
+
+#
+# ad713x_fmcz Configuration
+#
+CONFIG_AD713X_FMCZ_UART_EXAMPLE=y
+# CONFIG_AD713X_FMCZ_IIO_EXAMPLE is not set
+# end of ad713x_fmcz Configuration
+
+#
+# ad9081 Configuration
+#
+CONFIG_AD9081_DEMO_EXAMPLE=y
+# CONFIG_AD9081_IIO_EXAMPLE is not set
+# end of ad9081 Configuration
+
+#
+# ad9083 Configuration
+#
+CONFIG_AD9083_DEMO_EXAMPLE=y
+# CONFIG_AD9083_IIO_EXAMPLE is not set
+# end of ad9083 Configuration
+
+#
+# ad9172 Configuration
+#
+CONFIG_AD9172_DEMO_EXAMPLE=y
+# CONFIG_AD9172_IIO_EXAMPLE is not set
+# CONFIG_AD9172_DMA_EXAMPLE is not set
+# end of ad9172 Configuration
+
+#
+# ad9208 Configuration
+#
+CONFIG_AD9208_DEMO_EXAMPLE=y
+# CONFIG_AD9208_IIO_EXAMPLE is not set
+# end of ad9208 Configuration
+
+#
+# ad9467 Configuration
+#
+CONFIG_AD9467_DEMO_EXAMPLE=y
+# CONFIG_AD9467_IIO_EXAMPLE is not set
+# end of ad9467 Configuration
+
+#
+# ad9656_fmc Configuration
+#
+CONFIG_AD9656_FMC_DEMO_EXAMPLE=y
+# CONFIG_AD9656_FMC_IIO_EXAMPLE is not set
+# end of ad9656_fmc Configuration
+
+#
+# adrv9001 Configuration
+#
+CONFIG_ADRV9001_DEMO_EXAMPLE=y
+# CONFIG_ADRV9001_DEMO_ADRV9002_EXAMPLE is not set
+# CONFIG_ADRV9001_DMA_EXAMPLE is not set
+# CONFIG_ADRV9001_IIO_EXAMPLE is not set
+# CONFIG_ADRV9001_IIO_ADRV9002_EXAMPLE is not set
+# end of adrv9001 Configuration
+
+#
+# adrv9009 Configuration
+#
+CONFIG_ADRV9009_DEMO_EXAMPLE=y
+# CONFIG_ADRV9009_ADRV9008_1_EXAMPLE is not set
+# CONFIG_ADRV9009_ADRV9008_2_EXAMPLE is not set
+# CONFIG_ADRV9009_DMA_EXAMPLE is not set
+# CONFIG_ADRV9009_IIO_EXAMPLE is not set
+# end of adrv9009 Configuration
+
+#
+# adrv902x Configuration
+#
+CONFIG_ADRV902X_BASIC_EXAMPLE=y
+# CONFIG_ADRV902X_DMA_EXAMPLE is not set
+# CONFIG_ADRV902X_IIO_EXAMPLE is not set
+# end of adrv902x Configuration
+
+#
+# adrv903x Configuration
+#
+CONFIG_ADRV903X_BASIC_EXAMPLE=y
+# CONFIG_ADRV903X_DMA_EXAMPLE is not set
+# CONFIG_ADRV903X_IIO_EXAMPLE is not set
+# end of adrv903x Configuration
+
+#
+# adrv904x Configuration
+#
+CONFIG_ADRV904X_BASIC_EXAMPLE=y
+# CONFIG_ADRV904X_DMA_EXAMPLE is not set
+# CONFIG_ADRV904X_IIO_EXAMPLE is not set
+# end of adrv904x Configuration
+
+#
+# ad5766-sdz Configuration
+#
+CONFIG_AD5766_SDZ_EXAMPLE_EXAMPLE=y
+# end of ad5766-sdz Configuration
+
+#
+# ad5758-sdz Configuration
+#
+CONFIG_AD5758_SDZ_EXAMPLE_EXAMPLE=y
+# end of ad5758-sdz Configuration
+
+#
+# ad4110 Configuration
+#
+CONFIG_AD4110_UART_EXAMPLE=y
+# end of ad4110 Configuration
+
+#
+# ad413x Configuration
+#
+CONFIG_AD413X_DEMO_EXAMPLE=y
+# CONFIG_AD413X_IIO_EXAMPLE is not set
+# end of ad413x Configuration
+
+#
+# ad719x Configuration
+#
+CONFIG_AD719X_DUMMY_EXAMPLE=y
+# end of ad719x Configuration
+
+#
+# AD463X_FMCZ Configuration
+#
+CONFIG_AD463X_FMCZ_BASIC_EXAMPLE=y
+# CONFIG_AD463X_FMCZ_IIO_EXAMPLE is not set
+CONFIG_AD463X_FMCZ_DEV_AD4630_24=y
+# CONFIG_AD463X_FMCZ_DEV_AD4630_20 is not set
+# CONFIG_AD463X_FMCZ_DEV_AD4030 is not set
+# CONFIG_AD463X_FMCZ_DEV_ADAQ4224 is not set
+# CONFIG_AD463X_FMCZ_DEV_ADAQ4216 is not set
+# end of AD463X_FMCZ Configuration
+
+#
+# ad796x_fmcz Configuration
+#
+CONFIG_AD796X_FMCZ_IIO_EXAMPLE=y
+# CONFIG_AD796X_FMCZ_BASIC_EXAMPLE is not set
+# end of ad796x_fmcz Configuration
+
+#
+# AD4692 ARDZ Configuration
+#
+# CONFIG_AD4692_ARDZ_BASIC_EXAMPLE is not set
+CONFIG_AD4692_ARDZ_IIO_EXAMPLE=y
+# CONFIG_AD4692_ARDZ_IIO_TRIGGER_EXAMPLE is not set
+# end of AD4692 ARDZ Configuration
+
+#
+# ad469x_evb Configuration
+#
+CONFIG_AD469X_EVB_BASIC_EXAMPLE=y
+# CONFIG_AD469X_EVB_IIO_EXAMPLE is not set
+# CONFIG_AD469X_EVB_STANDARD_SEQ_EXAMPLE is not set
+# CONFIG_AD469X_EVB_ADVANCE_SEQ_EXAMPLE is not set
+# end of ad469x_evb Configuration
+
+#
+# ADF4371 Configuration
+#
+CONFIG_ADF4371_BASIC_EXAMPLE=y
+# end of ADF4371 Configuration
+
+#
+# AD74413R Configuration
+#
+CONFIG_AD74413R_DUMMY_EXAMPLE=y
+# CONFIG_AD74413R_IIO_EXAMPLE is not set
+# CONFIG_AD74413R_IIO_TRIGGER_EXAMPLE is not set
+# end of AD74413R Configuration
+
+#
+# AD74416H Configuration
+#
+CONFIG_AD74416H_BASIC_EXAMPLE=y
+# CONFIG_AD74416H_CURRENT_INPUT_EXT_EXAMPLE is not set
+# CONFIG_AD74416H_CURRENT_INPUT_LOOP_EXAMPLE is not set
+# CONFIG_AD74416H_CURRENT_OUTPUT_EXAMPLE is not set
+# CONFIG_AD74416H_DIGITAL_INPUT_LOGIC_EXAMPLE is not set
+# CONFIG_AD74416H_DIGITAL_INPUT_LOOP_EXAMPLE is not set
+# CONFIG_AD74416H_DIGITAL_OUTPUT_EXAMPLE is not set
+# CONFIG_AD74416H_MULTIPLE_DEVICES_EXAMPLE is not set
+# CONFIG_AD74416H_TEMPERATURE_2WIRE_RTD_EXAMPLE is not set
+# CONFIG_AD74416H_TEMPERATURE_3WIRE_RTD_EXAMPLE is not set
+# CONFIG_AD74416H_VOLTAGE_INPUT_EXAMPLE is not set
+# CONFIG_AD74416H_VOLTAGE_INPUT_IRQ_EXAMPLE is not set
+# CONFIG_AD74416H_VOLTAGE_OUTPUT_EXAMPLE is not set
+# end of AD74416H Configuration
+
+#
+# ADIN1320 Configuration
+#
+CONFIG_ADIN1320_BASIC_INIT_EXAMPLE=y
+# CONFIG_ADIN1320_BASIC_INIT_2DEVICES_EXAMPLE is not set
+# CONFIG_ADIN1320_CMD_EXAMPLE is not set
+# CONFIG_ADIN1320_WAKE_ON_LAN_EXAMPLE is not set
+# CONFIG_ADIN1320_FORCE_SPEED is not set
+# end of ADIN1320 Configuration
+
+#
+# ADF4382 Configuration
+#
+CONFIG_ADF4382_BASIC_EXAMPLE=y
+# CONFIG_ADF4382_IIO_EXAMPLE is not set
+# end of ADF4382 Configuration
+
+#
+# ADF4030 Configuration
+#
+CONFIG_ADF4030_BASIC_EXAMPLE=y
+# CONFIG_ADF4030_IIO_EXAMPLE is not set
+# end of ADF4030 Configuration
+
+#
+# ADF4368 Configuration
+#
+CONFIG_ADF4368_BASIC_EXAMPLE=y
+# CONFIG_ADF4368_IIO_EXAMPLE is not set
+# end of ADF4368 Configuration
+
+#
+# ADF5611 Configuration
+#
+CONFIG_ADF5611_BASIC_EXAMPLE=y
+# CONFIG_ADF5611_IIO_EXAMPLE is not set
+# end of ADF5611 Configuration
+
+#
+# adf5902_sdz Configuration
+#
+CONFIG_ADF5902_SDZ_DEMO_EXAMPLE=y
+# CONFIG_ADF5902_SDZ_IIO_EXAMPLE is not set
+# end of adf5902_sdz Configuration
+
+#
+# ADF4377 Configuration
+#
+CONFIG_ADF4377_BASIC_EXAMPLE=y
+# CONFIG_ADF4377_IIO_EXAMPLE is not set
+# end of ADF4377 Configuration
+
+#
+# AD5460 Configuration
+#
+CONFIG_AD5460_BASIC_EXAMPLE=y
+# CONFIG_AD5460_CHANNEL_OUTPUT_EXAMPLE is not set
+# CONFIG_AD5460_CURRENT_OUTPUT_EXAMPLE is not set
+# CONFIG_AD5460_VOLTAGE_OUTPUT_EXAMPLE is not set
+# end of AD5460 Configuration
+
+#
+# AD74414H Configuration
+#
+CONFIG_AD74414H_BASIC_EXAMPLE=y
+# CONFIG_AD74414H_CURRENT_INPUT_EXT_EXAMPLE is not set
+# CONFIG_AD74414H_CURRENT_INPUT_LOOP_EXAMPLE is not set
+# CONFIG_AD74414H_CURRENT_OUTPUT_EXAMPLE is not set
+# CONFIG_AD74414H_DIGITAL_INPUT_LOGIC_EXAMPLE is not set
+# CONFIG_AD74414H_DIGITAL_INPUT_LOOP_EXAMPLE is not set
+# CONFIG_AD74414H_DIGITAL_OUTPUT_EXAMPLE is not set
+# end of AD74414H Configuration
+
+#
+# AD7616-ST Configuration
+#
+CONFIG_AD7616_ST_IIO_EXAMPLE=y
+# end of AD7616-ST Configuration
+
+#
+# ad7768-evb Configuration
+#
+CONFIG_AD7768_EVB_DEMO_EXAMPLE=y
+# CONFIG_AD7768_EVB_IIO_EXAMPLE is not set
+# end of ad7768-evb Configuration
+
+#
+# ad7768-1fmcz Configuration
+#
+CONFIG_AD7768_1FMCZ_DEMO_EXAMPLE=y
+# CONFIG_AD7768_1FMCZ_SPI_ENGINE_OFFLOAD_EXAMPLE is not set
+# end of ad7768-1fmcz Configuration
+
+#
+# Pulsar ADC Configuration
+#
+CONFIG_PULSAR_ADC_BASIC_EXAMPLE=y
+# CONFIG_PULSAR_ADC_IIO_EXAMPLE is not set
+# end of Pulsar ADC Configuration
+
+#
+# AD738X_FMCZ Configuration
+#
+CONFIG_AD738X_FMCZ_BASIC_EXAMPLE=y
+# CONFIG_AD738X_FMCZ_IIO_EXAMPLE is not set
+# end of AD738X_FMCZ Configuration
+
+#
+# ADMT4000 Configuration
+#
+CONFIG_ADMT4000_BASIC_EXAMPLE=y
+# CONFIG_ADMT4000_IIO_TRIGGER_EXAMPLE is not set
+# end of ADMT4000 Configuration
+
+#
+# ADE7816 Configuration
+#
+CONFIG_ADE7816_BASIC_EXAMPLE=y
+# end of ADE7816 Configuration
+
+#
+# DC2903A Configuration
+#
+CONFIG_DC2903A_BASIC_EXAMPLE=y
+# end of DC2903A Configuration
+
+#
+# EVAL-ADE7754 Configuration
+#
+CONFIG_ADE7754_EXAMPLE=y
+# end of EVAL-ADE7754 Configuration
+
+#
+# ADALM-MMSC Configuration
+#
+CONFIG_ADALM_MMSC_IIO_EXAMPLE=y
+# end of ADALM-MMSC Configuration
+
+#
+# ADuCM Blinky Example Configuration
+#
+CONFIG_ADUCM_BLINKY_BASIC_EXAMPLE=y
+# end of ADuCM Blinky Example Configuration
+
+#
+# ADuCM3029 Flash Demo Configuration
+#
+CONFIG_ADUCM_FLASH_DEMO_EXAMPLE=y
+# end of ADuCM3029 Flash Demo Configuration
+
+#
+# ADA4250-ARDZ Configuration
+#
+CONFIG_ADA4250_ARDZ_IIO_EXAMPLE=y
+# end of ADA4250-ARDZ Configuration
+
+#
+# CN0531 Configuration
+#
+CONFIG_CN0531_IIO_EXAMPLE=y
+# CONFIG_CN0531_NETWORKING is not set
+# end of CN0531 Configuration
+
+#
+# IIO ADPD1080 Configuration
+#
+CONFIG_IIO_ADPD1080_IIO_EXAMPLE=y
+# CONFIG_IIO_ADPD1080_NETWORKING is not set
+# end of IIO ADPD1080 Configuration
+
+#
+# eval-ltc4306 Configuration
+#
+CONFIG_EVAL_LTC4306_BASIC_EXAMPLE=y
+# end of eval-ltc4306 Configuration
+
+#
+# AD7091R8-SDZ Configuration
+#
+CONFIG_AD7091R8_SDZ_BASIC_EXAMPLE=y
+# CONFIG_AD7091R8_SDZ_IIO_EXAMPLE is not set
+# CONFIG_AD7091R8_SDZ_IIO_TIMER_TRIGGER_EXAMPLE is not set
+# CONFIG_AD7091R8_SDZ_DEV_R2 is not set
+# CONFIG_AD7091R8_SDZ_DEV_R4 is not set
+CONFIG_AD7091R8_SDZ_DEV_R8=y
+# end of AD7091R8-SDZ Configuration
+
+#
+# adalm-lsmspg Configuration
+#
+CONFIG_ADALM_LSMSPG_IIO_EXAMPLE=y
+# CONFIG_ADALM_LSMSPG_CURVETRACE_EXAMPLE is not set
+# end of adalm-lsmspg Configuration
+
+#
+# ADES1754 Configuration
+#
+CONFIG_ADES1754_BASIC_EXAMPLE=y
+# CONFIG_ADES1754_SPI_UART_BRIDGE_EXAMPLE is not set
+# end of ADES1754 Configuration
+
+#
+# adin1110 Configuration
+#
+CONFIG_ADIN1110_FRAME_RX_TX_EXAMPLE=y
+# end of adin1110 Configuration
+
+#
+# ADP1050 Configuration
+#
+CONFIG_ADP1050_BASIC_EXAMPLE=y
+# CONFIG_ADP1050_IIO_EXAMPLE is not set
+# end of ADP1050 Configuration
+
+#
+# ADP1055 Configuration
+#
+CONFIG_ADP1055_BASIC_EXAMPLE=y
+# CONFIG_ADP1055_IIO_EXAMPLE_EXAMPLE is not set
+# end of ADP1055 Configuration
+
+#
+# ADP5055 Configuration
+#
+CONFIG_ADP5055_BASIC_EXAMPLE=y
+# CONFIG_ADP5055_IIO_EXAMPLE is not set
+# end of ADP5055 Configuration
+
+#
+# ADT75 Configuration
+#
+CONFIG_ADT75_BASIC_EXAMPLE=y
+# CONFIG_ADT75_IIO_EXAMPLE is not set
+# end of ADT75 Configuration
+
+#
+# apardpfwd Configuration
+#
+# end of apardpfwd Configuration
+
+#
+# apardspoe Configuration
+#
+# end of apardspoe Configuration
+
+#
+# DC2703A Configuration
+#
+CONFIG_DC2703A_BASIC_EXAMPLE=y
+# CONFIG_DC2703A_IIO_EXAMPLE is not set
+# end of DC2703A Configuration
+
+#
+# eval-ad7490sdz Configuration
+#
+CONFIG_EVAL_AD7490SDZ_BASIC_EXAMPLE=y
+# CONFIG_EVAL_AD7490SDZ_IIO_EXAMPLE is not set
+# end of eval-ad7490sdz Configuration
+
+#
+# eval-ad8460 Configuration
+#
+CONFIG_EVAL_AD8460_BASIC_EXAMPLE=y
+# CONFIG_EVAL_AD8460_IIO_EXAMPLE is not set
+# end of eval-ad8460 Configuration
+
+#
+# eval-ade7753 Configuration
+#
+CONFIG_EVAL_ADE7753_ADE7753_EXAMPLE=y
+# end of eval-ade7753 Configuration
+
+#
+# eval-ade7758 Configuration
+#
+CONFIG_EVAL_ADE7758_BASIC_EXAMPLE=y
+# end of eval-ade7758 Configuration
+
+#
+# EVAL-ADE7880 Configuration
+#
+CONFIG_EVAL_ADE7880_ADE7880_EXAMPLE=y
+# end of EVAL-ADE7880 Configuration
+
+#
+# eval-ade7913 Configuration
+#
+CONFIG_EVAL_ADE7913_ADE7913_EXAMPLE=y
+# end of eval-ade7913 Configuration
+
+#
+# eval-ade7953 Configuration
+#
+CONFIG_EVAL_ADE7953_BASIC_EXAMPLE=y
+# end of eval-ade7953 Configuration
+
+#
+# eval-ade7978 Configuration
+#
+CONFIG_EVAL_ADE7978_ADE7978_EXAMPLE=y
+# end of eval-ade7978 Configuration
+
+#
+# eval-ade9000 Configuration
+#
+CONFIG_EVAL_ADE9000_ADE9000_EXAMPLE=y
+# end of eval-ade9000 Configuration
+
+#
+# eval-ade9078 Configuration
+#
+CONFIG_EVAL_ADE9078_ADE9078_EXAMPLE=y
+# end of eval-ade9078 Configuration
+
+#
+# eval-ade9153a Configuration
+#
+CONFIG_EVAL_ADE9153A_ADE9153A_EXAMPLE_EXAMPLE=y
+# end of eval-ade9153a Configuration
+
+#
+# eval-adg1712 Configuration
+#
+CONFIG_EVAL_ADG1712_BASIC_EXAMPLE=y
+# end of eval-adg1712 Configuration
+
+#
+# eval-adg1736 Configuration
+#
+CONFIG_EVAL_ADG1736_BASIC_EXAMPLE=y
+# end of eval-adg1736 Configuration
+
+#
+# eval-adg2404 Configuration
+#
+CONFIG_EVAL_ADG2404_BASIC_EXAMPLE=y
+# end of eval-adg2404 Configuration
+
+#
+# eval-adgm3121 Configuration
+#
+CONFIG_EVAL_ADGM3121_BASIC_EXAMPLE=y
+# end of eval-adgm3121 Configuration
+
+#
+# eval-adgs6414d Configuration
+#
+CONFIG_EVAL_ADGS6414D_BASIC_EXAMPLE=y
+# end of eval-adgs6414d Configuration
+
+#
+# eval-adhv4710 Configuration
+#
+CONFIG_EVAL_ADHV4710_ADHV4710_EXAMPLE=y
+CONFIG_EVAL_ADHV4710_VARIANT_ADHV4710=y
+# CONFIG_EVAL_ADHV4710_VARIANT_ADHV4711 is not set
+# end of eval-adhv4710 Configuration
+
+#
+# eval-adl8113 Configuration
+#
+CONFIG_EVAL_ADL8113_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADL8113_IIO_EXAMPLE is not set
+# end of eval-adl8113 Configuration
+
+#
+# eval-ublox-gnss Configuration
+#
+CONFIG_EVAL_UBLOX_GNSS_BASIC_EXAMPLE=y
+# end of eval-ublox-gnss Configuration
+
+#
+# LT3074 Configuration
+#
+CONFIG_LT3074_BASIC_EXAMPLE=y
+# CONFIG_LT3074_IIO_EXAMPLE is not set
+# end of LT3074 Configuration
+
+#
+# LT7170 Configuration
+#
+CONFIG_LT7170_BASIC_EXAMPLE=y
+# CONFIG_LT7170_IIO_EXAMPLE is not set
+# end of LT7170 Configuration
+
+#
+# LT7182S Configuration
+#
+CONFIG_LT7182S_BASIC_EXAMPLE=y
+# CONFIG_LT7182S_IIO_EXAMPLE is not set
+# end of LT7182S Configuration
+
+#
+# LT8722 Configuration
+#
+CONFIG_LT8722_BASIC_EXAMPLE=y
+# CONFIG_LT8722_IIO_EXAMPLE is not set
+# end of LT8722 Configuration
+
+#
+# LTC2378 Configuration
+#
+CONFIG_LTC2378_BASIC_EXAMPLE=y
+# CONFIG_LTC2378_IIO_EXAMPLE is not set
+# end of LTC2378 Configuration
+
+#
+# ltc2983 Configuration
+#
+CONFIG_LTC2983_BASIC_EXAMPLE=y
+# CONFIG_LTC2983_IIO_EXAMPLE is not set
+# CONFIG_LTC2983_ADT7604_BASIC_EXAMPLE is not set
+# CONFIG_LTC2983_ADT7604_IIO_EXAMPLE is not set
+# end of ltc2983 Configuration
+
+#
+# LTC3208 Configuration
+#
+CONFIG_LTC3208_BASIC_EXAMPLE=y
+# end of LTC3208 Configuration
+
+#
+# ltc3220 Configuration
+#
+CONFIG_LTC3220_BASIC_EXAMPLE=y
+# end of ltc3220 Configuration
+
+#
+# LTC3337 Configuration
+#
+CONFIG_LTC3337_BASIC_EXAMPLE=y
+# end of LTC3337 Configuration
+
+#
+# LTC4162L Configuration
+#
+CONFIG_LTC4162L_BASIC_EXAMPLE=y
+# CONFIG_LTC4162L_IIO_EXAMPLE is not set
+# end of LTC4162L Configuration
+
+#
+# ltc4296 Configuration
+#
+CONFIG_LTC4296_BASIC_EXAMPLE=y
+# end of ltc4296 Configuration
+
+#
+# LTC7841 Configuration
+#
+CONFIG_LTC7841_BASIC_EXAMPLE=y
+# CONFIG_LTC7841_IIO_EXAMPLE is not set
+# end of LTC7841 Configuration
+
+#
+# LTC7871 Configuration
+#
+CONFIG_LTC7871_BASIC_EXAMPLE=y
+# CONFIG_LTC7871_IIO_EXAMPLE is not set
+# end of LTC7871 Configuration
+
+#
+# LTM4686 Configuration
+#
+CONFIG_LTM4686_BASIC_EXAMPLE=y
+# CONFIG_LTM4686_IIO_EXAMPLE is not set
+# end of LTM4686 Configuration
+
+#
+# LTM4700 Configuration
+#
+CONFIG_LTM4700_BASIC_EXAMPLE=y
+# CONFIG_LTM4700_IIO_EXAMPLE is not set
+# end of LTM4700 Configuration
+
+#
+# LTP8800 Configuration
+#
+CONFIG_LTP8800_BASIC_EXAMPLE=y
+# CONFIG_LTP8800_IIO_EXAMPLE is not set
+# end of LTP8800 Configuration
+
+#
+# max11205pmb1 Configuration
+#
+CONFIG_MAX11205PMB1_BASIC_EXAMPLE=y
+# CONFIG_MAX11205PMB1_IIO_EXAMPLE is not set
+# end of max11205pmb1 Configuration
+
+#
+# max14914 Configuration
+#
+CONFIG_MAX14914_BASIC_EXAMPLE=y
+# end of max14914 Configuration
+
+#
+# max14919 Configuration
+#
+CONFIG_MAX14919_BASIC_EXAMPLE=y
+# end of max14919 Configuration
+
+#
+# MAX17616 Configuration
+#
+CONFIG_MAX17616_BASIC_EXAMPLE=y
+# CONFIG_MAX17616_IIO_EXAMPLE is not set
+# end of MAX17616 Configuration
+
+#
+# MAX20362 Configuration
+#
+CONFIG_MAX20362_BASIC_EXAMPLE=y
+# end of MAX20362 Configuration
+
+#
+# MAX22017 Configuration
+#
+CONFIG_MAX22017_BASIC_EXAMPLE=y
+# CONFIG_MAX22017_IIO_EXAMPLE is not set
+# end of MAX22017 Configuration
+
+#
+# MAX22190 Configuration
+#
+CONFIG_MAX22190_BASIC_EXAMPLE=y
+# CONFIG_MAX22190_IIO_EXAMPLE is not set
+# end of MAX22190 Configuration
+
+#
+# MAX22196 Configuration
+#
+CONFIG_MAX22196_BASIC_EXAMPLE=y
+# CONFIG_MAX22196_IIO_EXAMPLE is not set
+# end of MAX22196 Configuration
+
+#
+# MAX22200 Configuration
+#
+CONFIG_MAX22200_BASIC_EXAMPLE=y
+# CONFIG_MAX22200_IIO_EXAMPLE is not set
+# end of MAX22200 Configuration
+
+#
+# MAX25603 Configuration
+#
+CONFIG_MAX25603_BASIC_EXAMPLE=y
+# end of MAX25603 Configuration
+
+#
+# max30009 Configuration
+#
+CONFIG_MAX30009_BASIC_EXAMPLE=y
+# end of max30009 Configuration
+
+#
+# MAX31855 Configuration
+#
+CONFIG_MAX31855_BASIC_EXAMPLE=y
+# CONFIG_MAX31855_IIO_EXAMPLE is not set
+# end of MAX31855 Configuration
+
+#
+# max42500 Configuration
+#
+# CONFIG_MAX42500_BASIC_EXAMPLE is not set
+CONFIG_MAX42500_IIO_EXAMPLE=y
+# end of max42500 Configuration
+
+#
+# maxm86161 Configuration
+#
+CONFIG_MAXM86161_BASIC_EXAMPLE=y
+# CONFIG_MAXM86161_IIO_EXAMPLE is not set
+# CONFIG_MAXM86161_ATTRIBUTE_TEST_EXAMPLE is not set
+# end of maxm86161 Configuration
+
+#
+# adt7420-pmdz Configuration
+#
+CONFIG_ADT7420_PMDZ_DUMMY_EXAMPLE=y
+# CONFIG_ADT7420_PMDZ_IIO_EXAMPLE is not set
+# end of adt7420-pmdz Configuration
+
+#
+# demo_esp Configuration
+#
+CONFIG_DEMO_ESP_BASIC_EXAMPLE=y
+# end of demo_esp Configuration
+
+#
+# eval-ltc4306 Configuration
+#
+# end of eval-ltc4306 Configuration
+
+#
+# ad9545 Configuration
+#
+CONFIG_AD9545_BASIC_EXAMPLE=y
+# end of ad9545 Configuration
+
+#
+# max14916 Configuration
+#
+CONFIG_MAX14916_BASIC_EXAMPLE=y
+# CONFIG_MAX14916_IIO_EXAMPLE is not set
+# end of max14916 Configuration
+
+#
+# max31827-evkit Configuration
+#
+CONFIG_MAX31827_EVKIT_BASIC_EXAMPLE=y
+# CONFIG_MAX31827_EVKIT_IIO_EXAMPLE is not set
+# end of max31827-evkit Configuration
+
+#
+# ad-acevsecrdset-sl Configuration
+#
+CONFIG_AD_ACEVSECRDSET_SL_STOUT_APPLICATION_EXAMPLE=y
+# CONFIG_AD_ACEVSECRDSET_SL_REV_A is not set
+CONFIG_AD_ACEVSECRDSET_SL_REV_D=y
+# end of ad-acevsecrdset-sl Configuration
+
+#
+# iio_demo_freeRTOS Configuration
+#
+CONFIG_IIO_DEMO_FREERTOS_IIO_EXAMPLE=y
+# end of iio_demo_freeRTOS Configuration
+
+#
+# ssd1306 Configuration
+#
+CONFIG_SSD1306_EXAMPLE_EXAMPLE=y
+# end of ssd1306 Configuration
+
+#
+# wethlink Configuration
+#
+CONFIG_WETHLINK_WETHLINK_REVB_EXAMPLE=y
+# CONFIG_WETHLINK_WETHLINK_REVA_EXAMPLE is not set
+# end of wethlink Configuration
+
+#
+# eval-ade9430 Configuration
+#
+CONFIG_EVAL_ADE9430_BASIC_EXAMPLE=y
+# CONFIG_EVAL_ADE9430_IOT_EXAMPLE is not set
+# CONFIG_EVAL_ADE9430_HW_RESET is not set
+# end of eval-ade9430 Configuration
+
+#
+# eval-pqmon Configuration
+#
+CONFIG_EVAL_PQMON_BASIC_EXAMPLE=y
+CONFIG_EVAL_PQMON_CONN_USB=y
+# CONFIG_EVAL_PQMON_CONN_SERIAL is not set
+# CONFIG_EVAL_PQMON_CONN_ETH is not set
+# CONFIG_EVAL_PQMON_CONN_T1L is not set
+# end of eval-pqmon Configuration
+
+#
+# ad7124-8pmdz Configuration
+#
+CONFIG_AD7124_8PMDZ_IIO_EXAMPLE=y
+# CONFIG_AD7124_8PMDZ_NETWORKING is not set
+# end of ad7124-8pmdz Configuration
+
+#
+# fmcdaq2 Configuration
+#
+CONFIG_FMCDAQ2_DEMO_EXAMPLE=y
+# CONFIG_FMCDAQ2_DMA_EXAMPLE is not set
+# CONFIG_FMCDAQ2_IIO_EXAMPLE is not set
+# end of fmcdaq2 Configuration
+
+#
+# fmcdaq3 Configuration
+#
+CONFIG_FMCDAQ3_DEMO_EXAMPLE=y
+# CONFIG_FMCDAQ3_IIO_EXAMPLE is not set
+# end of fmcdaq3 Configuration
+
+#
+# hello_world Configuration
+#
+CONFIG_HELLO_WORLD_BASIC_EXAMPLE=y
+# end of hello_world Configuration
+
+#
+# capi_selftest Configuration
+#
+CONFIG_CAPI_SELFTEST_BASIC_EXAMPLE=y
+# CONFIG_CAPI_SELFTEST_LOOPBACK_EXAMPLE is not set
+# end of capi_selftest Configuration
+
+#
+# eval-powrms Configuration
+#
+CONFIG_EVAL_POWRMS_EXAMPLE_EXAMPLE=y
+# end of eval-powrms Configuration
+
+#
+# eval-ad5933ardz Configuration
+#
+CONFIG_EVAL_AD5933ARDZ_BASIC_EXAMPLE=y
+# CONFIG_EVAL_AD5933ARDZ_IIO_EXAMPLE is not set
+# end of eval-ad5933ardz Configuration
+# end of Project-Specific Configuration

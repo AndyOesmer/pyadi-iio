@@ -1,0 +1,23 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/projects/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/projects/max42500/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/libraries/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/network/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/util/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/iio/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/jesd204/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/drivers/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/drivers/platform/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/drivers/platform/maxim/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/drivers/platform/maxim/max32655/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/drivers/api/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/drivers/power/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/capi/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/capi/platform/maxim/cmake_install.cmake",
+		"C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/capi/platform/maxim/common/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

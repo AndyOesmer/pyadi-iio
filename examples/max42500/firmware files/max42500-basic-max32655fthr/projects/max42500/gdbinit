@@ -1,0 +1,6 @@
+target remote localhost:50000
+load C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/build/max42500.elf
+file C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/build/max42500.elf
+monitor reset halt
+tb main
+c

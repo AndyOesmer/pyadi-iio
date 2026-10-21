@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "J-Link Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "executable": "$<TARGET_FILE:max42500>",
+            "cwd": "C:/Users/aoesmer/git/max42500/no-OS",
+            "device": "max32655",
+            "runToEntryPoint": "main"
+        },
+        {
+            "name": "OpenOCD Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "device": "cmsis-dap",
+            "executable": "$<TARGET_FILE:max42500>",
+            "cwd": "C:/Users/aoesmer/git/max42500/no-OS",
+            "serverpath": "C:/MaximSDK/Tools/OpenOCD/openocd.exe",
+            "configFiles": [
+                "C:/Users/aoesmer/git/max42500/no-OS/build/max42500-basic-max32655fthr/projects/max42500/openocd.cfg"
+            ],
+            "searchDir": [
+                "C:/msdk/Tools/OpenOCD/scripts"
+            ],
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none"
+        }
+    ]
+}

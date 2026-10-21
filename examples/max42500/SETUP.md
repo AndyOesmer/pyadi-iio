@@ -52,6 +52,18 @@ You need a board with a connected **SWD debug probe** (the AD-APARD32690-SL has
 an onboard CMSIS-DAP debugger; the MAX32655FTHR needs an external one such as a
 MAX32625PICO).
 
+> **Flashing the MAX32655FTHR — use the Eclipse IDE (MSDK).** The old
+> **drag-and-drop** method (copying a `.hex`/`.bin` onto the DAPLink
+> mass-storage drive) **no longer works** on this board. Flash the `.elf` from
+> the **MSDK Eclipse IDE** instead — import/open the project, then use its
+> *Run/Debug* (OpenOCD) configuration to program the board. The OpenOCD command
+> line in Option 1 performs the same flash if you prefer the terminal.
+>
+> **Which `.elf`?** For the host examples and the GUI you need the **IIO**
+> firmware (`max42500-iio_example-...`) — that is the build that runs the TinyIIOD
+> server pyadi-iio talks to. The `basic` build is a standalone console demo and
+> does **not** speak IIO.
+
 ### Wiring — MAX32655FTHR ↔ MAX42500
 
 Connect the MCU to the MAX42500 before flashing/running (in addition to the SWD
@@ -85,7 +97,13 @@ $env:MAXIM_PATH = "C:\MaximSDK"
 
 - Use the target cfg for your part: **`target/max32690.cfg`** for the
   AD-APARD32690-SL; **`target/max32655.cfg`** for the MAX32655FTHR.
-- `max42500_iio.elf` is the prebuilt IIO firmware you were given.
+- `max42500_iio.elf` is the prebuilt IIO firmware. Prebuilt MAX32655FTHR
+  binaries are bundled in [`firmware files/`](firmware%20files/):
+  - **IIO firmware — flash this one to run pyadi-iio / the GUI:**
+    [`firmware files/max42500-iio_example-max32655fthr/build/max42500.elf`](firmware%20files/max42500-iio_example-max32655fthr/build/max42500.elf)
+  - basic console demo (standalone, **not** an IIO server):
+    [`firmware files/max42500-basic-max32655fthr/build/max42500.elf`](firmware%20files/max42500-basic-max32655fthr/build/max42500.elf)
+  - each `build/` also has the matching `.bin` / `.hex` if your flasher prefers those.
 
 ### Option 2 — build and flash from no-OS source
 
@@ -111,6 +129,30 @@ The board enumerates as a **USB serial (COM) port**. Note its number — that is
 the `COMx` you pass to the host scripts. The TinyIIOD UART runs at **115200**
 baud (both the AD-APARD32690-SL and the MAX32655FTHR), so the context URI is
 `serial:COMx,115200,8n1n`.
+
+> **MAX32655FTHR:** if **115200** does not work, try **57600** instead —
+> `serial:COMx,57600,8n1n`.
+
+### If the serial connection won't open
+
+If a host script or `iio_info` can't establish the connection, confirm the IIOD
+server is actually running first:
+
+1. Open **Tera Term** on the board's **COM port** at **115200, 8 data bits, no
+   parity, 1 stop bit, no flow control**.
+2. Press the board's **reset** button. The terminal should print the IIOD banner:
+
+   ![Tera Term showing the IIOD server banner](images/tera_term_iiod.png)
+
+3. **Close the serial terminal** (only one program can own the COM port at a
+   time), then open a command prompt and query the context:
+
+   ```powershell
+   iio_info -u serial:COM7,115200,8n1n
+   ```
+
+   Replace `COM7` with your port. A device listing confirms the link; after that,
+   the host examples in Part D will connect on the same URI.
 
 ---
 
@@ -253,7 +295,9 @@ python examples\max42500\max42500_gui\_smoke_test.py serial:COM4,115200,8n1n   #
 |---|---|---|
 | `TypeError: argument of type 'NoneType' is not iterable` at `find_library("c")` on `import iio`, **or** `OSError: libiio version 1.x required` | pip installed **pylibiio 1.0** (libiio 1.x bindings); broken on Windows and wrong API for this pyadi | `pip uninstall -y pylibiio && pip install "pylibiio==0.25"` (match your libiio). Installing `requirements.txt` before `pip install -e .` prevents this. |
 | `ModuleNotFoundError: No module named 'serial'` | `pyserial` missing (GUI) | `pip install pyserial` (it's in `requirements.txt`). |
-| `Exception: No device found` on connect | wrong COM port, board not flashed/powered, wrong baud, or no hardware | Re-check the COM port (Part D), confirm the **iio_example** firmware is running, use `...,115200,8n1n`. |
+| `Exception: No device found` on connect | wrong COM port, board not flashed/powered, wrong baud, or no hardware | Re-check the COM port (Part D), confirm the **iio_example** firmware is running, use `...,115200,8n1n`. Verify the IIOD server with the Tera Term + reset check ("If the serial connection won't open", Part B). |
+| Can't connect to the MAX32655FTHR at 115200 | some units enumerate the TinyIIOD UART at a lower rate | try **57600**: `serial:COMx,57600,8n1n`. |
+| `iio_info`/scripts can't open the port, or it looks busy | a serial terminal still owns the COM port | close Tera Term / any serial monitor — only one program can hold the port at a time — then retry. |
 | Basic example connects but nothing prints when redirected | stdout is block-buffered when not a terminal | add `-u`: `python -u examples\max42500_example.py ...` |
 | GUI opens but Connect fails with no board attached | expected | the GUI still renders fully; attach a board to connect. |
 | `pylibiio` import works but attributes/channels missing | libiio C library vs bindings version mismatch | make `iio_info --version` and the `pylibiio==` pin agree. |
