@@ -10,7 +10,7 @@ libiio**.
   `include/max42500.hpp`)
 - Target firmware: `no-OS/drivers/power/max42500` (IIO device name `max42500`)
 - Target transport: `adi.max42500(uri=...)` e.g. `serial:COM4,115200,8n1n` or `ip:<addr>`
-  (baud is board-specific: **115200** on the AD-APARD32690-SL, **57600** on the MAX32655FTHR)
+  (baud is **115200** on both the AD-APARD32690-SL and the MAX32655FTHR)
 
 ---
 
@@ -173,7 +173,7 @@ not just planned.
 | Old C++ Blue Pill | New IIO GUI |
 |---|---|
 | STM32 Blue Pill firmware; thin I²C + SMBus-PEC bridge | No bespoke firmware — talks to the MAX42500 **no-OS IIO driver** via pyadi-iio/libiio |
-| Custom ASCII line protocol (`DATA/DBG/CFG` RX, `P/W/E/M/C` TX) over pyserial, fixed 115200 | **Transport-agnostic** libiio URIs: `serial:COMx,<baud>,8n1n`, `ip:`, `usb:`. Baud is board-specific — **115200** on AD-APARD32690-SL, **57600** on MAX32655FTHR |
+| Custom ASCII line protocol (`DATA/DBG/CFG` RX, `P/W/E/M/C` TX) over pyserial, fixed 115200 | **Transport-agnostic** libiio URIs: `serial:COMx,115200,8n1n`, `ip:`, `usb:`. 115200 baud on both AD-APARD32690-SL and MAX32655FTHR |
 | All register-code math in the Python GUI; writes raw registers | GUI keeps the *same* rail-volt + V-Divider solver, but writes **engineering-unit attributes** (`nominal_voltage` V; `ov/uv_threshold` as % for IN1–5, V for IN6–7); the driver re-encodes. Same chip result for the same rail + divider |
 
 ### Behaviour that changed

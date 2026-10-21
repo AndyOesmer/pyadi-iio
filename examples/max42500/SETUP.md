@@ -109,10 +109,8 @@ examples.
 
 The board enumerates as a **USB serial (COM) port**. Note its number — that is
 the `COMx` you pass to the host scripts. The TinyIIOD UART runs at **115200**
-baud on the AD-APARD32690-SL, so the context URI is `serial:COMx,115200,8n1n`.
-
-> **MAX32655FTHR:** the UART runs at **57600** baud instead. Use
-> `serial:COMx,57600,8n1n` everywhere this guide shows `...,115200,8n1n`.
+baud (both the AD-APARD32690-SL and the MAX32655FTHR), so the context URI is
+`serial:COMx,115200,8n1n`.
 
 ---
 
