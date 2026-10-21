@@ -1,0 +1,38 @@
+# Python dependencies for the MAX42500 examples (basic script + GUI).
+# Install these into the project virtualenv, then install pyadi-iio from source
+# (see SETUP.md). Works with pip or uv.
+#
+#   pip  install -r requirements.txt
+#   uv   pip install -r requirements.txt
+#
+# ---------------------------------------------------------------------------
+# CRITICAL (especially on Windows): pylibiio MUST match the libiio C library
+# you installed on the machine. This repo's pyadi-iio uses the libiio 0.x API,
+# so install the 0.x bindings. For a libiio 0.25 install, pin 0.25.
+#
+# Do NOT let pip pull the default pylibiio 1.0: on Windows it crashes on import
+# (find_library("c") returns None) and it targets the libiio 1.x API, which is
+# incompatible with this pyadi-iio. Installing 0.25 here (BEFORE building
+# pyadi-iio) keeps pip from ever resolving 1.0.
+#
+# Check your installed libiio version first:
+#   "C:\Program Files\IIO Oscilloscope\bin\iio_info.exe" --version      (Windows)
+#   iio_info --version                                                  (Linux/macOS)
+# and change the pin below if it is not 0.25.
+# ---------------------------------------------------------------------------
+pylibiio==0.25
+
+# Numerical core used by pyadi-iio.
+numpy>=1.20
+
+# Only the GUI uses this (to list serial ports and suggest serial: URIs).
+# The basic example does not need it, but it is harmless to install.
+pyserial>=3.5
+
+# NOT listed here, on purpose:
+#   * pyadi-iio       -> installed from this repo's source: `pip install -e .`
+#                        (listing it here would fetch a release from PyPI instead)
+#   * tkinter         -> part of the CPython standard library. Bundled with the
+#                        python.org installers on Windows/macOS. On Linux install
+#                        the OS package (e.g. `sudo apt install python3-tk`).
+#   * libiio          -> a system C library, not a pip package (see SETUP.md).

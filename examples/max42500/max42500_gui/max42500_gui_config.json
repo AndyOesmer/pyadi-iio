@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "uri": "serial:COM4,115200,8n1n",
+  "poll_hz": 5,
+  "auto_set": true,
+  "show_data": true,
+  "bridge_enabled": false,
+  "bridge_path": "C:\\OpenArmBridge\\system_state.json",
+  "channels": [
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "1.26",
+      "uv": "1.14"
+    },
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "1.155",
+      "uv": "1.045"
+    },
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "1.89",
+      "uv": "1.71"
+    },
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "3.465",
+      "uv": "3.135"
+    },
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "5.25",
+      "uv": "4.75"
+    },
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "0.8925",
+      "uv": "0.8075"
+    },
+    {
+      "mode": "Disable",
+      "divider": "1.0",
+      "ov": "0.8925",
+      "uv": "0.8075"
+    }
+  ]
+}
