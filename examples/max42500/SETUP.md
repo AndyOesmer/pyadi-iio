@@ -7,7 +7,7 @@ examples (the basic script and the GUI) against a Maxim MCU running the MAX42500
 The setup has two sides:
 
 ```
-  [ MCU board ]  AD-APARD32690-SL / MAX32666FTHR          [ Host laptop ]
+  [ MCU board ]  AD-APARD32690-SL / MAX32655FTHR          [ Host laptop ]
   runs no-OS "iio_example" firmware  ──USB serial──►  pyadi-iio + libiio
   (TinyIIOD server over UART)        serial:COMx,115200,8n1n   examples / GUI
 ```
@@ -49,8 +49,26 @@ python --version
 ## Part B — Flash the no-OS IIO firmware to the MCU (step 1)
 
 You need a board with a connected **SWD debug probe** (the AD-APARD32690-SL has
-an onboard CMSIS-DAP debugger; the MAX32666FTHR needs an external one such as a
+an onboard CMSIS-DAP debugger; the MAX32655FTHR needs an external one such as a
 MAX32625PICO).
+
+### Wiring — MAX32655FTHR ↔ MAX42500
+
+Connect the MCU to the MAX42500 before flashing/running (in addition to the SWD
+probe and the USB cable). The firmware drives the MAX42500 over **I²C2**, so
+SDA/SCL must be wired too.
+
+| MAX32655FTHR | MAX42500 | Purpose |
+|---|---|---|
+| 3V3 | VSUP | 3.3 V supply |
+| GND | GND | common ground |
+| P0_30 | SCL | I²C2 clock |
+| P0_31 | SDA | I²C2 data |
+| P1_6 | EN0 | enable / state-machine input 0 |
+| P1_7 | EN1 | enable / state-machine input 1 |
+
+> I²C2 runs at 400 kHz; the MAX42500 answers at bus address `0x28`. SDA/SCL need
+> pull-ups to 3V3 (typically 2.2–4.7 kΩ) if the MAX42500 board doesn't fit them.
 
 ### Option 1 — flash a provided prebuilt `.elf` (fastest)
 
@@ -66,7 +84,7 @@ $env:MAXIM_PATH = "C:\MaximSDK"
 ```
 
 - Use the target cfg for your part: **`target/max32690.cfg`** for the
-  AD-APARD32690-SL; the **MAX3266x** family cfg for the MAX32666FTHR.
+  AD-APARD32690-SL; **`target/max32655.cfg`** for the MAX32655FTHR.
 - `max42500_iio.elf` is the prebuilt IIO firmware you were given.
 
 ### Option 2 — build and flash from no-OS source
@@ -84,14 +102,17 @@ python tools/scripts/no_os_build.py build `
 ```
 
 Boards/variants available: `--board ad-apard32690-sl` (basic, iio_example) or
-`max32666fthr` (iio_example). Always use `--variant iio_example` for these host
+`max32655fthr` (iio_example). Always use `--variant iio_example` for these host
 examples.
 
 ### After flashing
 
 The board enumerates as a **USB serial (COM) port**. Note its number — that is
 the `COMx` you pass to the host scripts. The TinyIIOD UART runs at **115200**
-baud, so the context URI is `serial:COMx,115200,8n1n`.
+baud on the AD-APARD32690-SL, so the context URI is `serial:COMx,115200,8n1n`.
+
+> **MAX32655FTHR:** the UART runs at **57600** baud instead. Use
+> `serial:COMx,57600,8n1n` everywhere this guide shows `...,115200,8n1n`.
 
 ---
 

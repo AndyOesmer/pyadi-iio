@@ -10,6 +10,7 @@ libiio**.
   `include/max42500.hpp`)
 - Target firmware: `no-OS/drivers/power/max42500` (IIO device name `max42500`)
 - Target transport: `adi.max42500(uri=...)` e.g. `serial:COM4,115200,8n1n` or `ip:<addr>`
+  (baud is board-specific: **115200** on the AD-APARD32690-SL, **57600** on the MAX32655FTHR)
 
 ---
 
@@ -161,7 +162,61 @@ so it is ported into the IIO GUI with these changes:
 
 ---
 
-## 6. Build acceptance checklist (for `max42500_gui/`)
+## 6. As-built — concrete changes from the old C++ Blue Pill
+
+What the committed GUI (`max42500_gui/max42500_monitor_gui.py`) actually does
+differently from the old `MAX42500_Bluepill` project (STM32 firmware `main.cpp` +
+`gui/max42500_monitor_gui_v1.8.py`). Everything below is implemented in the code,
+not just planned.
+
+### Transport & firmware
+| Old C++ Blue Pill | New IIO GUI |
+|---|---|
+| STM32 Blue Pill firmware; thin I²C + SMBus-PEC bridge | No bespoke firmware — talks to the MAX42500 **no-OS IIO driver** via pyadi-iio/libiio |
+| Custom ASCII line protocol (`DATA/DBG/CFG` RX, `P/W/E/M/C` TX) over pyserial, fixed 115200 | **Transport-agnostic** libiio URIs: `serial:COMx,<baud>,8n1n`, `ip:`, `usb:`. Baud is board-specific — **115200** on AD-APARD32690-SL, **57600** on MAX32655FTHR |
+| All register-code math in the Python GUI; writes raw registers | GUI keeps the *same* rail-volt + V-Divider solver, but writes **engineering-unit attributes** (`nominal_voltage` V; `ov/uv_threshold` as % for IN1–5, V for IN6–7); the driver re-encodes. Same chip result for the same rail + divider |
+
+### Behaviour that changed
+- **Validation against the chip's own ranges** — the worker reads each channel's
+  `nominal_voltage_available` / `ov_threshold_available` / `uv_threshold_available`
+  `[min step max]` strings and the solver validates edits against them (old GUI
+  used hard-coded limits).
+- **Status polling is host-driven** — no firmware `P <hz>`; the worker loop sets
+  the cadence and reads `ID, STATOV, STATUV, STATOFF, WDSTAT, CONFIG2, VMON` as
+  whole registers via `reg_read` each tick (7 reads/tick), deriving the per-channel
+  bits — mirroring the old `DATA` line without the firmware poll-rate command.
+- **Channel modes via raw `reg_write`** — Enable/Monitor/Disable write VMON (0x03)
+  and RSTMAP (0x04) directly (bit0=IN1, top bit preserved) instead of the old
+  `E`/`M` mask commands; RESET is **un-mapped before enables** so an Enable→Monitor
+  move cannot momentarily trip RESET.
+- **Connection stages replace DBG checkpoints** — the firmware emits no `DBG`
+  lines, so the GUI synthesises stage indicators: `CTX → DEV → ID → ATTR → POLL`.
+- **Single-threaded libiio access** — all device I/O runs on one `IIOWorker`
+  thread; the GUI exchanges commands/events over queues (libiio contexts are not
+  thread-safe). The old GUI talked to pyserial directly.
+
+### New capability surfaced (absent in the old project)
+- Engineering-unit threshold/nominal **read-back** with valid-range strings.
+- `device_state` enum (`off`/`sleep`/`on`) and a real **watchdog** group
+  (`watchdog_enable`, `watchdog_reset_hold`, refresh-key) — shown but **read-only**
+  to match the old firmware, which only read WDSTAT and the CONFIG2 EN0/EN1 pins.
+- `power_up_timestamp` / `power_down_timestamp` (µs) exposed by the driver.
+
+### Kept identical (ported, not changed)
+- Dark theme & layout, IN1–IN7 table, OV/UV/OFF/Fault LEDs + active-fault count
+  (Enable channels only), rail-volt + V-Divider operator model.
+- Config JSON persist/reload — **adds a `uri` field**; old
+  `max42500_gui_config.json` files (with `divider`/`ov`/`uv`) load directly.
+- OpenArm bridge JSON — same schema (`power_fault`, `active_faults`,
+  `fault_channels`, per-channel `channels{...}`, `device_id`, …), now **optional,
+  off by default, configurable path** (config key / GUI panel / `--bridge`),
+  non-fatal on write errors; `source` is `"MAX42500 Monitor (IIO)"`.
+- Log with a *Show Data* filter (the old *show heartbeat* filter is dropped — the
+  driver emits no heartbeat line).
+
+---
+
+## 7. Build acceptance checklist (for `max42500_gui/`)
 
 - [ ] Connects via URI in a worker thread; all libiio access on that one thread.
 - [ ] Connection-stage indicators (context / device / ID / attrs / polling).
